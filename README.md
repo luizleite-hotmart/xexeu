@@ -5,6 +5,7 @@ For this happen this will be the TODO list fell free to help with that.
 
 - [x] TODO LIST :stuck_out_tongue_winking_eye:
 - [] Initial structure from project.
+- [] configure travis
 - [] User structure.
 - [] files for user register.
 - [] Purge date from files.
