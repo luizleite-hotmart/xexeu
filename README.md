@@ -5,8 +5,8 @@ For this happen this will be the TODO list fell free to help with that.
 
 - [x] TODO LIST :stuck_out_tongue_winking_eye:
 - [ ] Initial structure from project.
-    - [ ] create bucket controller
-    - [ ] create user entity
+    - [x] create bucket controller
+    - [x] create user entity
     - [ ] create user repository    
 - [ ] configure travis
 - [ ] User structure.
