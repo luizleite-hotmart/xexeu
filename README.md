@@ -5,13 +5,14 @@ For this happen this will be the TODO list fell free to help with that.
 
 - [x] TODO LIST :stuck_out_tongue_winking_eye:
 - [ ] Initial structure from project.
-    - [x] create bucket controller
-    - [x] create user entity
-    - [ ] create user repository    
-- [ ] configure travis
+    - [x] create bucket controller.
+    - [x] create user entity.
+    - [ ] folder configuration.
+    - [ ] create user repository.
+- [ ] configure travis.
 - [ ] User structure.
 - [ ] files for user register.
 - [ ] Purge date from files.
 - [ ] Control security from files for user.
-- [ ] async download from files.
+- [ ] async alert download from files.
 - [ ] config from project option
