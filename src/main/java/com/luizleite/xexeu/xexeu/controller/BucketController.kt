@@ -1,6 +1,6 @@
 package com.luizleite.xexeu.xexeu.controller
 
-import org.apache.catalina.User
+import com.luizleite.xexeu.xexeu.entity.User
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -12,6 +12,6 @@ class BucketController {
 
     @GetMapping
     fun getUserBucket(user: User) : ResponseEntity<*> {
-        return ResponseEntity.ok("start is ok")
+        return ResponseEntity.ok("start is ok ${user.slug}")
     }
 }
