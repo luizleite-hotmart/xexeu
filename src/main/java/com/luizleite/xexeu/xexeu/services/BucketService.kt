@@ -9,8 +9,7 @@ import org.springframework.stereotype.Service
 class BucketService @Autowired constructor(private val userFileRepository:UserFileRepository){
 
     fun findAllFilesFromUser(slug:String): MutableIterable<UserFile>? {
-        val files = userFileRepository.findAll()
-//        val files2 = userFileRepository.findUserFileBySlug(slug)
+        val files = userFileRepository.findUserFileBySlug(slug)
         return files
     }
 
