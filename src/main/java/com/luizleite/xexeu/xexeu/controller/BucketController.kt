@@ -1,6 +1,5 @@
 package com.luizleite.xexeu.xexeu.controller
 
-import com.luizleite.xexeu.xexeu.entity.User
 import com.luizleite.xexeu.xexeu.services.BucketService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -10,12 +9,18 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("rest/v1/bucket")
-class BucketController @Autowired constructor(private val bucketService: BucketService){
+class BucketController {
 
+    private var bucketService: BucketService
+
+    @Autowired
+    constructor(bucketService: BucketService) {
+        this.bucketService = bucketService
+    }
 
     @GetMapping
-    fun getUserBucket(user: User) : ResponseEntity<*> {
-        val list = bucketService.findAllFilesFromUser(user.slug,user.name)
-        return ResponseEntity.ok("start is ok ${user.slug}")
+    fun getUserBucket(user: String) : ResponseEntity<*> {
+        val list = bucketService.findAllFilesFromUser(user)
+        return ResponseEntity.ok(list)
     }
 }

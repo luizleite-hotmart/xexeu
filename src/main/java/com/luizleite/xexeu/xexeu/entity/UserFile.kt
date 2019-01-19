@@ -1,3 +1,16 @@
 package com.luizleite.xexeu.xexeu.entity
 
-data class UserFile(var user:User, var webPath:String, var name:String, var fileHash:String)
+import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.Id
+
+@Entity
+data class UserFile(
+        @Column
+        var slug:String,
+        @Column
+        var webPath:String,
+        @Column
+        var name:String,
+        @Id
+        var fileHash:String)

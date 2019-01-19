@@ -6,12 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
-class BucketService @Autowired constructor(private val userFileRepository:UserFileRepository,
-                                           private val userService: UserService){
+class BucketService @Autowired constructor(private val userFileRepository:UserFileRepository){
 
-    fun findAllFilesFromUser(slug:String, name:String?):List<UserFile> {
-        val user = userService.createUserOrReturnIfExists(slug, name)
-        val files = userFileRepository.findAllFilesFromUser(user!!)
+    fun findAllFilesFromUser(slug:String):List<UserFile> {
+        val files = userFileRepository.findUserFileBySlug(slug)
         return files
     }
 
