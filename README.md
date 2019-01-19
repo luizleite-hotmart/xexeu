@@ -7,8 +7,9 @@ For this happen this will be the TODO list fell free to help with that.
 - [ ] Initial structure from project.
     - [x] create bucket controller.
     - [x] create user entity.
-    - [ ] folder configuration.
-    - [ ] create user repository.
+    - [x] file configuration.
+    - [x] create user repository.
+    - [x] create file repository.
 - [ ] configure travis.
 - [ ] User structure.
 - [ ] files for user register.
