@@ -9,7 +9,6 @@ import org.mockito.ArgumentMatchers
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnitRunner
 import org.mockito.Mockito.`when`
-import org.mockito.Mockito.any
 import kotlin.test.assertEquals
 
 @RunWith(MockitoJUnitRunner::class)
@@ -45,6 +44,15 @@ internal open class UserServiceTest {
         val userService = UserService(userRepository)
         `when`(userRepository.findUserBySlug("test")).thenReturn(null)
         assertEquals(false, userService.verifyIfUserExists("test"))
+    }
+
+    @Test
+    fun `'verifyUserExists' returning one user that not exists`() {
+
+        val userService = UserService(userRepository)
+        val user = User("test", "name")
+        `when`(userRepository.findUserBySlug("test")).thenReturn(user)
+        assertEquals(true, userService.verifyIfUserExists("test"))
     }
 
 }
