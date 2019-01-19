@@ -2,16 +2,12 @@ package com.luizleite.xexeu.xexeu.services
 
 import com.luizleite.xexeu.xexeu.entity.User
 import com.luizleite.xexeu.xexeu.repositorys.UserRepository
-
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
+
 @Service
-class UserService {
+class UserService @Autowired constructor(private val userRepository:UserRepository){
 
-    val userRepository:UserRepository
-
-    constructor(userRepository: UserRepository) {
-        this.userRepository = userRepository
-    }
 
     fun verifyIfUserExists(slug: String): Boolean{
         val user = userRepository.findUserBySlug(slug)
