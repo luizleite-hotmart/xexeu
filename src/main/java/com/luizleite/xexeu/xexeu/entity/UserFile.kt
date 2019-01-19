@@ -1,3 +1,3 @@
 package com.luizleite.xexeu.xexeu.entity
 
-data class UserFile(var user:User, var webPath:String, var name:String)
+data class UserFile(var user:User, var webPath:String, var name:String, var fileHash:String)
