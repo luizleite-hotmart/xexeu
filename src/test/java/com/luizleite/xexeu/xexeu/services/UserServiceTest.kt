@@ -55,4 +55,26 @@ internal open class UserServiceTest {
         assertEquals(true, userService.verifyIfUserExists("test"))
     }
 
+    @Test
+    fun `'createUser' get user when exists that exists`() {
+
+        val userService = UserService(userRepository)
+        val user = User("test", "name")
+        `when`(userRepository.findUserBySlug("test")).thenReturn(user)
+        val userCreated =  userService.createUserOrReturnIfExists("test", "name")
+        assertEquals(user.name, userCreated?.name)
+        assertEquals(user.slug, userCreated?.slug)
+    }
+
+    @Test
+    fun `'createUser' get user when exists that not exists`() {
+
+        val userService = UserService(userRepository)
+        val user = User("test", "name")
+        `when`(userRepository.findUserBySlug("test")).thenReturn(null)
+        val userCreated =  userService.createUserOrReturnIfExists("test", "name")
+        assertEquals(user.name, userCreated?.name)
+        assertEquals(user.slug, userCreated?.slug)
+    }
+
 }
