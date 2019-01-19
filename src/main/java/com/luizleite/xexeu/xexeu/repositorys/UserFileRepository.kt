@@ -5,5 +5,5 @@ import org.springframework.data.repository.PagingAndSortingRepository
 
 interface UserFileRepository:PagingAndSortingRepository<UserFile, String> {
 
-    fun findUserFileBySlug(user:String):List<UserFile>
+    fun findUserFileBySlug(user:String): MutableIterable<UserFile>?
 }

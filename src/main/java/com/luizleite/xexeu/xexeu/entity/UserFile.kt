@@ -6,11 +6,11 @@ import javax.persistence.Id
 
 @Entity
 data class UserFile(
-        @Column
-        var slug:String,
-        @Column
-        var webPath:String,
-        @Column
-        var name:String,
         @Id
-        var fileHash:String)
+        var fileHash:String? = null,
+        @Column
+        var slug:String? = null,
+        @Column
+        var webPath:String? = null,
+        @Column
+        var name:String? = null)
