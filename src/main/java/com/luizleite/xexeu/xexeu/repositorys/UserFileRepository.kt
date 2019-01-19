@@ -6,5 +6,5 @@ import org.springframework.data.repository.PagingAndSortingRepository
 
 interface UserFileRepository:PagingAndSortingRepository<UserFile, String> {
 
-    fun findAllFilesFromUser(user:User)
+    fun findAllFilesFromUser(user:User):List<UserFile>
 }
