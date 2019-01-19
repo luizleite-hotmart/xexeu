@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository
 
 interface UserRepository:CrudRepository<User,String> {
 
-    fun findUserBySlug(slug:String):User
+    fun findUserBySlug(slug:String):User?
 }

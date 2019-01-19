@@ -15,16 +15,20 @@ class UserService {
 
     fun verifyIfUserExists(slug: String): Boolean{
         val user = userRepository.findUserBySlug(slug)
-        return user == null
+        return user != null
     }
 
-    fun createUser(slug: String, name:String?): User {
+    fun createUser(slug: String, name:String?): User? {
         if (!verifyIfUserExists(slug)) {
             val user = User(slug, name)
             userRepository.save(user)
             return user
         }
         return userRepository.findUserBySlug(slug)
+    }
+
+    fun retrieveAllUsers(): List<User> {
+        return userRepository.findAll().toList()
     }
 
 }
