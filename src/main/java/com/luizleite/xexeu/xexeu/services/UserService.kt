@@ -18,4 +18,13 @@ class UserService {
         return user == null
     }
 
+    fun createUser(slug: String, name:String?): User {
+        if (!verifyIfUserExists(slug)) {
+            val user = User(slug, name)
+            userRepository.save(user)
+            return user
+        }
+        return userRepository.findUserBySlug(slug)
+    }
+
 }
